@@ -64,13 +64,14 @@ class MainActivity : AppCompatActivity() {
     private val receiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
             val id = intent?.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1)
-           notificationManager.sendNotification(selectedFileName.toString(), applicationContext, "Success")
+           //notificationManager.sendNotification(selectedFileName.toString(), applicationContext, "Success")
         }
     }
 
 
 
     private fun download() {
+        loadingButton.setLoadingButtonState(ButtonState.Loading)
         val request =
             DownloadManager.Request(Uri.parse(URL))
                 .setTitle(getString(R.string.app_name))
