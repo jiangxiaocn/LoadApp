@@ -23,4 +23,5 @@
     <string name="ok">OK</string>
     <string name="download">Download</string>
     <string name="notification_channel_id" translatable="false">loadApp_channel</string>
+    <string name="notification_channel_name" translatable="true">loadApp</string>
 </resources>

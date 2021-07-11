@@ -24,7 +24,7 @@ class LoadingButton @JvmOverloads constructor(
     private var buttonText: String
     private var valueAnimator = ValueAnimator()
     private var progress: Float = 0f
-    private var rectF = RectF(50f, 20f, 100f, 80f)
+    private var rectF = RectF(750f, 50f, 800f, 100f)
 
     private var buttonState: ButtonState by Delegates.observable<ButtonState>(ButtonState.Completed) { p, old, new ->
         when(new) {
@@ -53,11 +53,11 @@ class LoadingButton @JvmOverloads constructor(
 
     }
 
-    private fun enableLoadingButton() {
+    fun enableLoadingButton() {
         custom_button.isEnabled=true
     }
 
-    private fun disableLoadingButton() {
+    fun disableLoadingButton() {
         custom_button.isEnabled=false
     }
 
@@ -103,14 +103,7 @@ class LoadingButton @JvmOverloads constructor(
         super.onDraw(canvas)
 
         canvas?.drawColor(buttonBgColor)
-        canvas?.drawRect(0f, 0f, 100f, 100f, bgPaint)
-        this@LoadingButton.buttonText=("Download")
-        canvas?.drawText(
-                buttonText,
-                (widthSize / 2).toFloat(),
-                (heightSize / 2).toFloat(),
-                textPaint
-        )
+
         if (buttonState == ButtonState.Loading) {
             this@LoadingButton.buttonText=("We are downloading")
             canvas?.drawRect(0f, 0f, progress * widthSize,heightSize.toFloat(), downloadingBgPaint)
@@ -121,10 +114,19 @@ class LoadingButton @JvmOverloads constructor(
                     textPaint
             )
             canvas?.drawArc(rectF,
-                    0f,
+                    20f,
                     progress * -360f,
                     true,
                     arcPaint)
+        }else {
+            //canvas?.drawRect(0f, 0f, 100f, 100f, bgPaint)
+            this@LoadingButton.buttonText=("Download")
+            canvas?.drawText(
+                    buttonText,
+                    (widthSize / 2).toFloat(),
+                    (heightSize / 2).toFloat(),
+                    textPaint
+            )
         }
 
     }

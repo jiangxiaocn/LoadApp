@@ -40,7 +40,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:text="@string/glide"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            android:onClick="radioButtonSelectFileName"/>
 
         <RadioButton
             android:id="@+id/load_app_button"
@@ -48,7 +49,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:text="@string/load_app"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            android:onClick="radioButtonSelectFileName"/>
 
         <RadioButton
             android:id="@+id/retrofit_button"
@@ -56,7 +58,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:text="@string/retrofit"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            android:onClick="radioButtonSelectFileName"/>
     </RadioGroup>
 
     <com.udacity.LoadingButton
